@@ -1,0 +1,32 @@
+package pertemuan4;
+
+public class Rekening {
+    private Nasabah nasabah;
+    private int saldo;
+
+    public Rekening(Nasabah nasabah) {
+        this(nasabah, 0);
+    }
+    public Rekening(Nasabah nasabah, int saldoAwal){
+        nasabah=new Nasabah(nasabah.getNama(),nasabah.getIdentitas(),nasabah.getAlamat());
+        this.saldo=saldo;
+    }
+    public void penarikan(double jumlah) {
+        int saldoBaru = (int) (saldo - jumlah);
+        if (saldoBaru > 0 && jumlah > 0) {
+            saldo = saldoBaru;
+        }
+    }
+    public void penyetoran(int jumlah){
+        if(jumlah>0)
+            saldo=saldo+jumlah;
+    }
+
+    public Nasabah getNasabah() {
+        return nasabah;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+}
